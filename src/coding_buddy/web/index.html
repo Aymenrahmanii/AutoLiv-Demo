@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coding Buddy</title>
+  <meta name="description" content="LLM review of R crash-analysis scripts, with and without a codebook. Small experiment on synthetic data.">
+  <link rel="icon" href="/static/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="/static/app.css?v=7">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="rail">
+    <a class="brand" href="#benchmark" aria-label="Coding Buddy, benchmark view">
+      <img src="/static/mark.svg" alt="" width="30" height="30">
+      <span class="brand-name">Coding Buddy</span>
+      <span class="brand-sub">R review for crash-data analysis</span>
+    </a>
+    <nav class="tabs" aria-label="Views">
+      <a class="tab" href="#benchmark" data-view="benchmark">Benchmark</a>
+      <a class="tab" href="#live" data-view="live">Live review</a>
+      <a class="tab" href="#codebook" data-view="codebook">Codebook</a>
+    </nav>
+    <div class="rail-plates">
+      <span class="plate plate-mono" id="model-plate">gemini</span>
+      <span class="plate plate-yellow">Synthetic data</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Benchmark -->
+    <section class="view" id="view-benchmark" aria-labelledby="bench-title">
+      <div class="bench-head">
+        <h1 id="bench-title">Loading benchmark results</h1>
+        <p class="bench-meta" id="bench-meta"></p>
+      </div>
+
+      <div class="gantry" id="gantry" aria-label="Headline results"></div>
+
+      <div class="work" id="work">
+        <aside class="scripts" aria-labelledby="scripts-title">
+          <div class="pane-head">
+            <h2 id="scripts-title">Scripts</h2>
+            <span class="legend"><span class="tally-key">CO</span> code only <span class="tally-key">CB</span> + codebook</span>
+          </div>
+          <ul class="script-list" id="script-list"></ul>
+        </aside>
+
+        <section class="viewer" aria-labelledby="viewer-title">
+          <div class="viewer-head">
+            <div class="viewer-title-row">
+              <h2 id="viewer-title" class="mono">Script</h2>
+              <div class="controls">
+                <div class="segmented" role="radiogroup" aria-label="Condition" id="mode-group">
+                  <button type="button" role="radio" data-mode="compare" aria-checked="true">Compare</button>
+                  <button type="button" role="radio" data-mode="without_codebook" aria-checked="false">Code only</button>
+                  <button type="button" role="radio" data-mode="with_codebook" aria-checked="false">+ Codebook</button>
+                </div>
+                <label class="select-wrap">
+                  <span class="visually-hidden">Run</span>
+                  <select id="run-select" aria-label="Run"></select>
+                </label>
+              </div>
+            </div>
+            <div class="truth" id="truth"></div>
+          </div>
+          <div class="code-scroll" id="bench-code"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Live review -->
+    <section class="view" id="view-live" aria-labelledby="live-title" hidden>
+      <div class="bench-head">
+        <h1 id="live-title">Review any R script</h1>
+        <p class="bench-meta">Paste a script, choose whether the model sees the codebook, and run the review. The code is sent to Gemini through this local server.</p>
+      </div>
+
+      <div class="live">
+        <form class="editor-pane" id="review-form">
+          <div class="toolbar">
+            <label class="field">
+              <span>Load example</span>
+              <span class="select-wrap"><select id="example-select"></select></span>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="use-codebook" checked>
+              <span>Include codebook</span>
+            </label>
+            <button class="btn" type="submit" id="review-btn">
+              <span class="btn-label">Review script</span>
+              <kbd>Ctrl ↵</kbd>
+            </button>
+          </div>
+          <div class="editor">
+            <pre class="editor-gutter" id="editor-gutter" aria-hidden="true">1</pre>
+            <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="R script" maxlength="20000"></textarea>
+          </div>
+          <p class="hint" id="editor-hint">0 lines</p>
+        </form>
+
+        <section class="result-pane" aria-labelledby="result-title" aria-live="polite" id="result-pane">
+          <div class="pane-head">
+            <h2 id="result-title">Findings</h2>
+            <span class="result-meta" id="result-meta"></span>
+          </div>
+          <div class="result-body" id="result-body"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Codebook -->
+    <section class="view" id="view-codebook" aria-labelledby="codebook-title" hidden>
+      <article class="codebook" id="codebook-body">
+        <h1 id="codebook-title">Codebook</h1>
+      </article>
+    </section>
+  </main>
+
+  <template id="tpl-sign">
+    <svg class="sign-tri" viewBox="0 0 24 22" aria-hidden="true" focusable="false">
+      <path d="M12 1.6 23 20.4H1z" fill="var(--sign-yellow)" stroke="var(--sign-red)" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M12 7.6v6.2" stroke="var(--ink)" stroke-width="2.3" stroke-linecap="round"/>
+      <circle cx="12" cy="16.9" r="1.35" fill="var(--ink)"/>
+    </svg>
+  </template>
+
+  <script src="/static/app.js?v=7" type="module"></script>
+</body>
+</html>

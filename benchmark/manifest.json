@@ -1,0 +1,95 @@
+{
+  "description": "Ground truth for the Coding Buddy benchmark. Each buggy script has exactly one injected error; `snippet` is a substring of the line that contains it. `needs_codebook` is our prior guess of whether the error can only be spotted with domain notes. `diagnosis_keywords`: a hit counts as correctly explained when its explanation contains any of them (case-insensitive); fixed from the bug definition. Rule: when the bug is about a variable, the explanation must name the real variable from the codebook (an invented column name would not fix the script). The 04 list was tightened to this rule after the first run.",
+  "cases": [
+    {
+      "script": "01_mais3_by_vehicle_type.R",
+      "bug": {
+        "category": "wrong_join_key",
+        "snippet": "left_join(vehicles, by = \"crash_id\")",
+        "description": "Occupants are joined to vehicles on crash_id only; the key is (crash_id, vehicle_id), so occupants in multi-vehicle crashes are duplicated and matched to the wrong vehicle.",
+        "needs_codebook": false,
+        "diagnosis_keywords": [
+          "vehicle_id"
+        ]
+      }
+    },
+    {
+      "script": "02_serious_trend_2015_2022.R",
+      "bug": {
+        "category": "filter_drops_valid_rows",
+        "snippet": "filter(crash_year > 2015 & crash_year < 2022)",
+        "description": "Study period is 2015-2022 inclusive, but strict inequalities drop the years 2015 and 2022.",
+        "needs_codebook": false,
+        "diagnosis_keywords": [
+          "2015",
+          "inclusive",
+          ">="
+        ]
+      }
+    },
+    {
+      "script": "03_risk_by_delta_v.R",
+      "bug": {
+        "category": "unit_error",
+        "snippet": "mutate(delta_v_kmh = delta_v * 1.609)",
+        "description": "delta_v is already in km/h according to the codebook; multiplying by 1.609 treats it as mph and shifts every occupant into a higher band.",
+        "needs_codebook": true,
+        "diagnosis_keywords": [
+          "km/h",
+          "kmh",
+          "kilometers per hour",
+          "kilometres per hour"
+        ]
+      }
+    },
+    {
+      "script": "04_weighted_driver_estimate.R",
+      "bug": {
+        "category": "wrong_column",
+        "snippet": "weighted.mean(serious, w = vehicle_weight)",
+        "description": "The estimate is weighted by vehicle_weight (curb mass in kg) instead of the sampling weight case_weight from crashes.csv.",
+        "needs_codebook": true,
+        "diagnosis_keywords": [
+          "case_weight"
+        ]
+      }
+    },
+    {
+      "script": "05_belt_rate_by_model_year.R",
+      "bug": {
+        "category": "unknown_code_not_excluded",
+        "snippet": "belt_rate = mean(belt_use)",
+        "description": "belt_use = 9 means unknown; averaging the raw codes counts each unknown as 9 and inflates the belt rate.",
+        "needs_codebook": true,
+        "diagnosis_keywords": [
+          "9",
+          "unknown"
+        ]
+      }
+    },
+    {
+      "script": "06_risk_by_age_group.R",
+      "bug": {
+        "category": "missing_values",
+        "snippet": "replace_na(list(mais = 0))",
+        "description": "Occupants whose injury is not coded are recoded as uninjured (MAIS 0) instead of being excluded, biasing MAIS3+ risk downward.",
+        "needs_codebook": false,
+        "diagnosis_keywords": [
+          "uninjured",
+          "no injury",
+          "not injured",
+          "not coded",
+          "exclude"
+        ]
+      }
+    },
+    {
+      "script": "07_crash_type_summary.R",
+      "bug": null
+    },
+    {
+      "script": "08_belt_age_logistic_model.R",
+      "bug": null
+    }
+  ]
+}

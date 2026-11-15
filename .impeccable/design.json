@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-15T00:30:12+00:00",
+  "title": "Design System: Coding Buddy",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Road Ink",
+        "canonical": "#111518",
+        "tonalRamp": [
+          "oklch(15% 0.009 240)",
+          "oklch(26% 0.009 240)",
+          "oklch(38% 0.009 240)",
+          "oklch(49% 0.009 240)",
+          "oklch(61% 0.009 240)",
+          "oklch(72% 0.009 240)",
+          "oklch(84% 0.009 240)",
+          "oklch(95% 0.009 240)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#3c474f",
+        "tonalRamp": [
+          "oklch(15% 0.020 240)",
+          "oklch(26% 0.020 240)",
+          "oklch(38% 0.020 240)",
+          "oklch(49% 0.020 240)",
+          "oklch(61% 0.020 240)",
+          "oklch(72% 0.020 240)",
+          "oklch(84% 0.020 240)",
+          "oklch(95% 0.020 240)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#55616a",
+        "tonalRamp": [
+          "oklch(15% 0.021 240)",
+          "oklch(26% 0.021 240)",
+          "oklch(38% 0.021 240)",
+          "oklch(49% 0.021 240)",
+          "oklch(61% 0.021 240)",
+          "oklch(72% 0.021 240)",
+          "oklch(84% 0.021 240)",
+          "oklch(95% 0.021 240)"
+        ]
+      },
+      "gutter-ink": {
+        "role": "neutral",
+        "displayName": "Gutter Slate",
+        "canonical": "#5f6b74",
+        "tonalRamp": [
+          "oklch(15% 0.020 240)",
+          "oklch(26% 0.020 240)",
+          "oklch(38% 0.020 240)",
+          "oklch(49% 0.020 240)",
+          "oklch(61% 0.020 240)",
+          "oklch(72% 0.020 240)",
+          "oklch(84% 0.020 240)",
+          "oklch(95% 0.020 240)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Overcast Ground",
+        "canonical": "#e9edf0",
+        "tonalRamp": [
+          "oklch(15% 0.006 240)",
+          "oklch(26% 0.006 240)",
+          "oklch(38% 0.006 240)",
+          "oklch(49% 0.006 240)",
+          "oklch(61% 0.006 240)",
+          "oklch(72% 0.006 240)",
+          "oklch(84% 0.006 240)",
+          "oklch(95% 0.006 240)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#f5f7f8",
+        "tonalRamp": [
+          "oklch(15% 0.003 229)",
+          "oklch(26% 0.003 229)",
+          "oklch(38% 0.003 229)",
+          "oklch(49% 0.003 229)",
+          "oklch(61% 0.003 229)",
+          "oklch(72% 0.003 229)",
+          "oklch(84% 0.003 229)",
+          "oklch(95% 0.003 229)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#d2d9de",
+        "tonalRamp": [
+          "oklch(15% 0.010 239)",
+          "oklch(26% 0.010 239)",
+          "oklch(38% 0.010 239)",
+          "oklch(49% 0.010 239)",
+          "oklch(61% 0.010 239)",
+          "oklch(72% 0.010 239)",
+          "oklch(84% 0.010 239)",
+          "oklch(95% 0.010 239)"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#9aa6ae",
+        "tonalRamp": [
+          "oklch(15% 0.018 237)",
+          "oklch(26% 0.018 237)",
+          "oklch(38% 0.018 237)",
+          "oklch(49% 0.018 237)",
+          "oklch(61% 0.018 237)",
+          "oklch(72% 0.018 237)",
+          "oklch(84% 0.018 237)",
+          "oklch(95% 0.018 237)"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Gantry Steel",
+        "canonical": "#1c2328",
+        "tonalRamp": [
+          "oklch(15% 0.014 239)",
+          "oklch(26% 0.014 239)",
+          "oklch(38% 0.014 239)",
+          "oklch(49% 0.014 239)",
+          "oklch(61% 0.014 239)",
+          "oklch(72% 0.014 239)",
+          "oklch(84% 0.014 239)",
+          "oklch(95% 0.014 239)"
+        ]
+      },
+      "steel-2": {
+        "role": "neutral",
+        "displayName": "Steel Edge",
+        "canonical": "#2a333a",
+        "tonalRamp": [
+          "oklch(15% 0.018 242)",
+          "oklch(26% 0.018 242)",
+          "oklch(38% 0.018 242)",
+          "oklch(49% 0.018 242)",
+          "oklch(61% 0.018 242)",
+          "oklch(72% 0.018 242)",
+          "oklch(84% 0.018 242)",
+          "oklch(95% 0.018 242)"
+        ]
+      },
+      "on-steel": {
+        "role": "neutral",
+        "displayName": "Rail White",
+        "canonical": "#f2f5f7",
+        "tonalRamp": [
+          "oklch(15% 0.004 236)",
+          "oklch(26% 0.004 236)",
+          "oklch(38% 0.004 236)",
+          "oklch(49% 0.004 236)",
+          "oklch(61% 0.004 236)",
+          "oklch(72% 0.004 236)",
+          "oklch(84% 0.004 236)",
+          "oklch(95% 0.004 236)"
+        ]
+      },
+      "on-steel-muted": {
+        "role": "neutral",
+        "displayName": "Rail Grey",
+        "canonical": "#b9c4cb",
+        "tonalRamp": [
+          "oklch(15% 0.016 235)",
+          "oklch(26% 0.016 235)",
+          "oklch(38% 0.016 235)",
+          "oklch(49% 0.016 235)",
+          "oklch(61% 0.016 235)",
+          "oklch(72% 0.016 235)",
+          "oklch(84% 0.016 235)",
+          "oklch(95% 0.016 235)"
+        ]
+      },
+      "sign-blue": {
+        "role": "primary",
+        "displayName": "Direction Sign Blue",
+        "canonical": "#0a5aa8",
+        "tonalRamp": [
+          "oklch(15% 0.143 254)",
+          "oklch(26% 0.143 254)",
+          "oklch(38% 0.143 254)",
+          "oklch(49% 0.143 254)",
+          "oklch(61% 0.143 254)",
+          "oklch(72% 0.143 254)",
+          "oklch(84% 0.143 254)",
+          "oklch(95% 0.143 254)"
+        ]
+      },
+      "sign-blue-deep": {
+        "role": "primary",
+        "displayName": "Deep Sign Blue",
+        "canonical": "#084c8f",
+        "tonalRamp": [
+          "oklch(15% 0.127 254)",
+          "oklch(26% 0.127 254)",
+          "oklch(38% 0.127 254)",
+          "oklch(49% 0.127 254)",
+          "oklch(61% 0.127 254)",
+          "oklch(72% 0.127 254)",
+          "oklch(84% 0.127 254)",
+          "oklch(95% 0.127 254)"
+        ]
+      },
+      "sign-green": {
+        "role": "secondary",
+        "displayName": "Motorway Green",
+        "canonical": "#00704a",
+        "tonalRamp": [
+          "oklch(15% 0.107 161)",
+          "oklch(26% 0.107 161)",
+          "oklch(38% 0.107 161)",
+          "oklch(49% 0.107 161)",
+          "oklch(61% 0.107 161)",
+          "oklch(72% 0.107 161)",
+          "oklch(84% 0.107 161)",
+          "oklch(95% 0.107 161)"
+        ]
+      },
+      "sign-yellow": {
+        "role": "tertiary",
+        "displayName": "Warning Yellow",
+        "canonical": "#ffd100",
+        "tonalRamp": [
+          "oklch(15% 0.160 93)",
+          "oklch(26% 0.160 93)",
+          "oklch(38% 0.160 93)",
+          "oklch(49% 0.160 93)",
+          "oklch(61% 0.160 93)",
+          "oklch(72% 0.160 93)",
+          "oklch(84% 0.160 93)",
+          "oklch(95% 0.160 93)"
+        ]
+      },
+      "sign-yellow-soft": {
+        "role": "tertiary",
+        "displayName": "Warning Wash",
+        "canonical": "#fff6c7",
+        "tonalRamp": [
+          "oklch(15% 0.061 98)",
+          "oklch(26% 0.061 98)",
+          "oklch(38% 0.061 98)",
+          "oklch(49% 0.061 98)",
+          "oklch(61% 0.061 98)",
+          "oklch(72% 0.061 98)",
+          "oklch(84% 0.061 98)",
+          "oklch(95% 0.061 98)"
+        ]
+      },
+      "sign-red": {
+        "role": "tertiary",
+        "displayName": "Warning Border Red",
+        "canonical": "#d2141e",
+        "tonalRamp": [
+          "oklch(15% 0.216 27)",
+          "oklch(26% 0.216 27)",
+          "oklch(38% 0.216 27)",
+          "oklch(49% 0.216 27)",
+          "oklch(61% 0.216 27)",
+          "oklch(72% 0.216 27)",
+          "oklch(84% 0.216 27)",
+          "oklch(95% 0.216 27)"
+        ]
+      },
+      "sign-red-soft": {
+        "role": "tertiary",
+        "displayName": "Alarm Wash",
+        "canonical": "#fdecec",
+        "tonalRamp": [
+          "oklch(15% 0.018 17)",
+          "oklch(26% 0.018 17)",
+          "oklch(38% 0.018 17)",
+          "oklch(49% 0.018 17)",
+          "oklch(61% 0.018 17)",
+          "oklch(72% 0.018 17)",
+          "oklch(84% 0.018 17)",
+          "oklch(95% 0.018 17)"
+        ]
+      },
+      "truth-row": {
+        "role": "tertiary",
+        "displayName": "Truth Row",
+        "canonical": "#fff9da",
+        "tonalRamp": [
+          "oklch(15% 0.041 98)",
+          "oklch(26% 0.041 98)",
+          "oklch(38% 0.041 98)",
+          "oklch(49% 0.041 98)",
+          "oklch(61% 0.041 98)",
+          "oklch(72% 0.041 98)",
+          "oklch(84% 0.041 98)",
+          "oklch(95% 0.041 98)"
+        ]
+      },
+      "select-row": {
+        "role": "neutral",
+        "displayName": "Selected Row Blue",
+        "canonical": "#e3eefa",
+        "tonalRamp": [
+          "oklch(15% 0.020 250)",
+          "oklch(26% 0.020 250)",
+          "oklch(38% 0.020 250)",
+          "oklch(49% 0.020 250)",
+          "oklch(61% 0.020 250)",
+          "oklch(72% 0.020 250)",
+          "oklch(84% 0.020 250)",
+          "oklch(95% 0.020 250)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Sign Figure",
+        "purpose": "Monumental figure on each direction sign only; Overpass sans, never mono."
+      },
+      "headline": {
+        "displayName": "View Title",
+        "purpose": "One title per view."
+      },
+      "sign-name": {
+        "displayName": "Sign Destination",
+        "purpose": "Destination line on a direction sign."
+      },
+      "title": {
+        "displayName": "Pane Title",
+        "purpose": "Pane headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose and meta, tabular numerals, 70-78ch measures."
+      },
+      "label": {
+        "displayName": "Plate Label",
+        "purpose": "Plates and condition chips, sentence case."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Code view, editor and gutter; ligatures off."
+      },
+      "mono-label": {
+        "displayName": "Mono Label",
+        "purpose": "Model names, tallies, categories, filenames; ligatures off."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sign-lift",
+        "value": "0 1px 2px rgb(17 21 24 / 0.2), 0 6px 18px -8px rgb(17 21 24 / 0.35)",
+        "purpose": "Direction signs only."
+      },
+      {
+        "name": "rail-shade",
+        "value": "0 2px 10px rgb(17 21 24 / 0.18)",
+        "purpose": "Sticky rail over scrolling content."
+      },
+      {
+        "name": "button-press",
+        "value": "0 1px 2px rgb(17 21 24 / 0.25)",
+        "purpose": "Primary button."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid #0a5aa8; outline-offset: 2px",
+        "purpose": "Global focus-visible; yellow and inset -4px on steel rail tabs."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Sign flip and note reveal."
+      },
+      {
+        "name": "sign-flip",
+        "value": "520ms; perspective(200px) rotateX(-80deg) to none; origin top; staggered per line",
+        "purpose": "Warning triangles swing down into place like a hinged sign panel."
+      },
+      {
+        "name": "note-in",
+        "value": "420ms; clip-path inset(0 0 100% 0) to inset(0); +120ms after its sign",
+        "purpose": "Finding notes unroll beneath their line."
+      },
+      {
+        "name": "state-transition",
+        "value": "140ms-160ms",
+        "purpose": "Hover colour and background changes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "1ms",
+        "purpose": "All animation and transition durations under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop-narrow",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet",
+        "value": "860px"
+      },
+      {
+        "name": "phone",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single primary action (Review script), with a keyboard hint.",
+      "html": "<button class=\"ds-btn\">Review script <kbd>Ctrl ↵</kbd></button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 3px 18px 0; border: 0; border-radius: 4px; background: #0a5aa8; color: #fff; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; font-weight: 700; font-size: 0.95rem; cursor: pointer; box-shadow: 0 1px 2px rgb(17 21 24 / 0.25); transition: background-color 140ms, transform 140ms; } .ds-btn:hover { background: #084c8f; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 3px solid #0a5aa8; outline-offset: 2px; } .ds-btn kbd { font-size: 0.72rem; padding: 2px 6px 0; border-radius: 3px; background: rgb(255 255 255 / 0.16); font-family: inherit; }"
+    },
+    {
+      "name": "Status Plates",
+      "kind": "chip",
+      "refersTo": "plate-hit",
+      "description": "The status vocabulary: hit, warning, truth, miss, quiet.",
+      "html": "<div class=\"ds-row\"><span class=\"ds-plate ds-hit\">Right line · right cause</span><span class=\"ds-plate ds-warn\">Right line · wrong cause</span><span class=\"ds-plate ds-truth\">Injected · line 42</span><span class=\"ds-plate ds-miss\">False alarm</span><span class=\"ds-plate ds-quiet\">Clean control</span></div>",
+      "css": ".ds-plate { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 2px 9px 0; border-radius: 3px; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; font-size: 0.8rem; font-weight: 700; line-height: 1; white-space: nowrap; } .ds-row { display: flex; flex-wrap: wrap; gap: 8px; } .ds-hit { background: #00704a; color: #fff; } .ds-warn { background: #ffd100; color: #111518; } .ds-truth { background: #fff; color: #111518; box-shadow: inset 0 0 0 2px #111518; } .ds-miss { background: #fff; color: #d2141e; box-shadow: inset 0 0 0 2px #d2141e; } .ds-quiet { background: #f5f7f8; color: #3c474f; box-shadow: inset 0 0 0 1px #d2d9de; }"
+    },
+    {
+      "name": "Distance Plate",
+      "kind": "custom",
+      "refersTo": "plate-truth",
+      "description": "Signature: a sign that misses the exact line carries a distance-ahead plate. Implemented in code; not seen in the current benchmark run, where every hit lands on the exact line.",
+      "html": "<span class=\"ds-plate ds-dist\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M6 10V2M2.5 5.5 6 2l3.5 3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>2 lines</span>",
+      "css": ".ds-plate { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 2px 9px 0; border-radius: 3px; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; font-size: 0.8rem; font-weight: 700; line-height: 1; white-space: nowrap; } .ds-dist { background: #fff; color: #111518; box-shadow: inset 0 0 0 2px #111518; font-family: \"Overpass Mono\", ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-variant-ligatures: none; font-feature-settings: \"liga\" 0, \"calt\" 0; font-weight: 600; } .ds-dist svg { width: 12px; height: 12px; }"
+    },
+    {
+      "name": "Direction Sign",
+      "kind": "card",
+      "refersTo": "direction-sign-codebook",
+      "description": "Signature: one condition's headline result on the gantry, with lane bars per injected script.",
+      "html": "<div class=\"ds-sign\"><div class=\"ds-dest\"><span class=\"ds-name\">Code + codebook</span><span class=\"ds-detail\">errors correctly explained</span></div><div class=\"ds-fig\"><span class=\"ds-n\">5</span><span class=\"ds-of\">/ 6</span></div><div class=\"ds-lanes\"><span class=\"ds-lane is-on\"><i style=\"width:100%\"></i><b>01</b></span><span class=\"ds-lane is-on\"><i style=\"width:50%\"></i><b>02</b></span><span class=\"ds-lane\"><i style=\"width:0%\"></i><b>03</b></span></div></div>",
+      "css": ".ds-sign { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px 24px; padding: 24px 32px; border-radius: 6px; background: #00704a; color: #fff; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; box-shadow: 0 1px 2px rgb(17 21 24 / 0.2), 0 6px 18px -8px rgb(17 21 24 / 0.35); } .ds-sign::before { content: \"\"; position: absolute; inset: 6px; border: 2px solid rgb(255 255 255 / 0.92); border-radius: 3px; pointer-events: none; } .ds-dest { display: flex; flex-direction: column; gap: 4px; } .ds-name { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.01em; } .ds-detail { font-size: 0.95rem; color: rgb(255 255 255 / 0.86); } .ds-fig { display: flex; align-items: baseline; gap: 6px; font-weight: 800; line-height: 0.9; } .ds-n { font-size: 5.4rem; } .ds-of { font-size: 2rem; opacity: 0.86; } .ds-lanes { grid-column: 1 / -1; display: flex; gap: 6px; margin-top: 8px; } .ds-lane { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; height: 24px; border-radius: 2px; background: rgb(255 255 255 / 0.16); overflow: hidden; } .ds-lane i { position: absolute; inset: 0 auto 0 0; background: #fff; } .ds-lane b { position: relative; font-family: \"Overpass Mono\", ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-variant-ligatures: none; font-feature-settings: \"liga\" 0, \"calt\" 0; font-size: 0.8rem; font-weight: 600; color: rgb(255 255 255 / 0.85); } .ds-lane.is-on b { color: #00704a; }"
+    },
+    {
+      "name": "Finding on the Line",
+      "kind": "custom",
+      "refersTo": "finding-note",
+      "description": "Signature: a warning triangle planted at the injected line, with its note beneath.",
+      "html": "<div class=\"ds-code\"><div class=\"ds-line\"><span class=\"ds-ln\"><span>42</span></span><span class=\"ds-sg\"><svg class=\"ds-tri\" viewBox=\"0 0 24 22\" aria-hidden=\"true\"><path d=\"M12 1.6 23 20.4H1z\" fill=\"#ffd100\" stroke=\"#d2141e\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M12 7.6v6.2\" stroke=\"#111518\" stroke-width=\"2.3\" stroke-linecap=\"round\"/><circle cx=\"12\" cy=\"16.9\" r=\"1.35\" fill=\"#111518\"/></svg></span><span class=\"ds-src\">mais3 &lt;- df$mais &gt; 3</span></div><div class=\"ds-note\"><div class=\"ds-note-head\"><span class=\"ds-cat\">threshold</span><span class=\"ds-plate ds-hit\">Right line · right cause</span></div><p>MAIS3+ means MAIS of 3 or more; the comparison drops MAIS 3.</p></div></div>",
+      "css": ".ds-plate { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 2px 9px 0; border-radius: 3px; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; font-size: 0.8rem; font-weight: 700; line-height: 1; white-space: nowrap; } .ds-hit { background: #00704a; color: #fff; } .ds-code { background: #fff; border: 1px solid #d2d9de; border-radius: 6px; padding: 8px 0; } .ds-line { display: flex; align-items: center; background: #fff9da; font-family: \"Overpass Mono\", ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-variant-ligatures: none; font-feature-settings: \"liga\" 0, \"calt\" 0; font-size: 0.875rem; line-height: 1.75; } .ds-ln { padding: 0 12px 0 16px; font-weight: 600; } .ds-ln span { padding: 0 5px; background: #fff; border-radius: 2px; box-shadow: inset 0 0 0 1.5px #111518; } .ds-sg { width: 30px; text-align: center; } .ds-tri { width: 20px; height: 18px; vertical-align: -3px; } .ds-src { padding: 0 16px 0 12px; white-space: pre; color: #111518; } .ds-note { margin: 4px 16px 10px 54px; display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border-radius: 4px; background: #fff6c7; box-shadow: inset 0 0 0 1px #ecd777; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.45; } .ds-note-head { display: flex; gap: 6px; align-items: center; } .ds-cat { font-family: \"Overpass Mono\", ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-variant-ligatures: none; font-feature-settings: \"liga\" 0, \"calt\" 0; font-weight: 600; font-size: 0.82rem; } .ds-note p { margin: 0; color: #111518; }"
+    },
+    {
+      "name": "Tallies",
+      "kind": "chip",
+      "refersTo": "tally-full",
+      "description": "Per-script result chips, one per condition.",
+      "html": "<div class=\"ds-tallies\"><span class=\"ds-tally ds-full\">3/3<small>CB</small></span><span class=\"ds-tally ds-part\">1/3<small>CO</small></span><span class=\"ds-tally ds-none\">0/3<small>CO</small></span><span class=\"ds-tally ds-alarm\">2 FA<small>CO</small></span></div>",
+      "css": ".ds-tallies { display: flex; gap: 4px; } .ds-tally { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; height: 44px; border-radius: 3px; font-family: \"Overpass Mono\", ui-monospace, \"Cascadia Mono\", Consolas, monospace; font-variant-ligatures: none; font-feature-settings: \"liga\" 0, \"calt\" 0; font-size: 0.78rem; font-weight: 600; line-height: 1.15; } .ds-tally small { font-size: 0.8rem; opacity: 0.85; } .ds-full { background: #00704a; color: #fff; } .ds-part { background: #ffd100; color: #111518; } .ds-none { background: #fff; color: #d2141e; box-shadow: inset 0 0 0 2px #d2141e; } .ds-alarm { background: #fdecec; color: #d2141e; box-shadow: inset 0 0 0 1px #f2b8bb; }"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "input",
+      "refersTo": "segmented-selected",
+      "description": "Condition toggle: compare, code only, codebook.",
+      "html": "<div class=\"ds-seg\" role=\"radiogroup\"><button role=\"radio\" aria-checked=\"true\">Compare</button><button role=\"radio\" aria-checked=\"false\">Code only</button><button role=\"radio\" aria-checked=\"false\">+ Codebook</button></div>",
+      "css": ".ds-seg { display: inline-flex; padding: 3px; gap: 2px; background: #f5f7f8; border: 1px solid #d2d9de; border-radius: 5px; } .ds-seg button { min-height: 34px; padding: 3px 12px 0; border: 0; border-radius: 3px; background: transparent; color: #3c474f; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: background-color 140ms, color 140ms; } .ds-seg button:hover { color: #111518; } .ds-seg button[aria-checked=\"true\"] { background: #1c2328; color: #f2f5f7; } .ds-seg button:focus-visible { outline: 3px solid #0a5aa8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Select",
+      "kind": "input",
+      "refersTo": "select",
+      "description": "Run and example pickers with a drawn chevron.",
+      "html": "<label class=\"ds-select\"><select><option>Run 1</option><option>Run 2</option></select></label>",
+      "css": ".ds-select { position: relative; display: inline-flex; } .ds-select select { appearance: none; min-height: 40px; padding: 3px 34px 0 12px; border: 1px solid #9aa6ae; border-radius: 4px; background: #fff; color: #111518; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; } .ds-select select:focus-visible { outline: 3px solid #0a5aa8; outline-offset: 2px; } .ds-select::after { content: \"\"; position: absolute; right: 13px; top: 50%; width: 7px; height: 7px; margin-top: -5px; border-right: 2px solid #3c474f; border-bottom: 2px solid #3c474f; transform: rotate(45deg); pointer-events: none; }"
+    },
+    {
+      "name": "Gantry Rail",
+      "kind": "nav",
+      "refersTo": "rail",
+      "description": "Sticky steel rail with brand, tabs (yellow current bar) and the synthetic-data plate.",
+      "html": "<header class=\"ds-rail\"><span class=\"ds-brand\">Coding Buddy</span><nav class=\"ds-tabs\"><a href=\"#\" aria-current=\"page\">Benchmark</a><a href=\"#\">Live review</a><a href=\"#\">Codebook</a></nav><span class=\"ds-syn\">Synthetic data</span></header>",
+      "css": ".ds-rail { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; min-height: 60px; padding: 0 24px; background: #1c2328; color: #f2f5f7; font-family: \"Overpass\", \"Segoe UI\", system-ui, sans-serif; box-shadow: 0 2px 10px rgb(17 21 24 / 0.18); } .ds-brand { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; } .ds-tabs { display: flex; gap: 4px; justify-self: center; } .ds-tabs a { position: relative; display: inline-flex; align-items: center; min-height: 60px; padding: 0 16px; color: #b9c4cb; font-weight: 600; text-decoration: none; transition: color 160ms; } .ds-tabs a:hover, .ds-tabs a[aria-current=\"page\"] { color: #f2f5f7; } .ds-tabs a[aria-current=\"page\"]::after { content: \"\"; position: absolute; left: 16px; right: 16px; bottom: 0; height: 4px; background: #ffd100; border-radius: 2px 2px 0 0; } .ds-tabs a:focus-visible { outline: 3px solid #ffd100; outline-offset: -4px; } .ds-syn { display: inline-flex; align-items: center; height: 26px; padding: 2px 9px 0; border-radius: 3px; background: #ffd100; color: #111518; font-size: 0.8rem; font-weight: 700; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Road Signs on the Code",
+    "overview": "The system is the Swedish road-sign world applied to code review. A finding is not a card or a chat bubble; it is a yellow warning triangle with a red border, planted in the gutter at the line it is about, meant to be read at speed. The two experimental conditions are direction signs on a gantry: blue for code only, green for code plus codebook, each carrying one monumental figure. Ground truth is a white plate with a black border, the way a road sign states a fixed fact. Everything else (rail, panes, controls) is quiet steel and pale ground so the signs carry the meaning.\n\nDensity is that of a working tool viewed through a compressed screen share: a sticky 60px gantry-steel rail, a two-pane work area, tabular figures everywhere, and text that stays legible at reduced size. Colour is semantic, not decorative. Every saturated hue on screen means something specific (condition, hit, warning, miss), which is why the rail is steel rather than blue: a blue rail would blur the meaning of the blue code-only sign.\n\nMotion is a sign panel swinging down on its hinge: warning triangles flip into place (rotateX from -80deg, 520ms, expo-out) and finding notes unroll top to bottom (clip-path, 420ms), staggered per line. All motion collapses under reduced-motion preferences.",
+    "keyCharacteristics": [
+      "Semantic sign palette (blue, green, yellow, red) on steel and pale grey-blue ground.",
+      "Overpass (highway-gothic lineage) for UI and sign figures; Overpass Mono for code, model names and tallies.",
+      "Findings live on the code line as warning triangles, never in a separate feed.",
+      "Plates (small rounded labels, inset borders) carry every status: hit, warning, miss, truth, quiet.",
+      "Flat bordered panes; shadow reserved for the signs, the rail and the primary button."
+    ],
+    "rules": [
+      {
+        "name": "The Sign Meaning Rule",
+        "body": "Blue means code only, green means codebook or a confirmed hit, yellow means warning or partial, red means miss or error. No saturated sign colour is ever used as decoration or as shell chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "The Steel Shell Rule",
+        "body": "The application shell (rail, selected controls) is gantry steel, never a sign colour, so the signs are the only coloured objects that speak.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sign Numeral Rule",
+        "body": "Monumental sign figures stay in Overpass sans, never mono: sign numerals are not monospace.",
+        "section": "typography"
+      },
+      {
+        "name": "The Typed-As-Typed Rule",
+        "body": "Ligatures and contextual alternates are off for all code, mono labels and tallies, so R's `<-` reads as typed, never as an arrow.",
+        "section": "typography"
+      },
+      {
+        "name": "The Signs Stand Up Rule",
+        "body": "Only signs, the rail and the primary action carry shadow. Panes, plates, notes and tallies stay flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** plant every finding on its code line as a warning triangle, with its note directly beneath.",
+      "**Do** keep blue for code only and green for codebook or confirmed hits, everywhere (signs, plates, tallies, chips).",
+      "**Do** state ground truth as a white plate with a 2px ink inset border.",
+      "**Do** set code, filenames, model names and tallies in Overpass Mono with ligatures off.",
+      "**Do** keep sign figures in Overpass sans at weight 800.",
+      "**Do** say \"synthetic data\" on a yellow plate in the rail.",
+      "**Do** respect reduced motion: animations and transitions collapse to 1ms."
+    ],
+    "donts": [
+      "**Don't** colour the shell (rail, panes, controls) with a sign colour; the rail is gantry steel.",
+      "**Don't** show findings as KPI cards, chat bubbles or a feed detached from the code.",
+      "**Don't** put shadows on panes, plates, notes or tallies.",
+      "**Don't** set the monumental sign figures in mono."
+    ]
+  }
+}

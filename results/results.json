@@ -1,0 +1,225 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "repeats": 1,
+  "runs": {
+    "without_codebook": [
+      [
+        {
+          "script": "01_mais3_by_vehicle_type.R",
+          "injected_bug_line": 10,
+          "found": true,
+          "explained": false,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 10,
+              "category": "wrong_join_key",
+              "explanation": "The join uses only 'crash_id', which is insufficient to uniquely identify vehicles across multiple crashes. It should join on both 'crash_id' and 'veh_id' to correctly associate occupants with their specific vehicle."
+            }
+          ]
+        },
+        {
+          "script": "02_serious_trend_2015_2022.R",
+          "injected_bug_line": 14,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 14,
+              "category": "wrong_filter",
+              "explanation": "The filter uses strict inequalities (> 2015 & < 2022), which excludes the years 2015 and 2022, contradicting the study period defined in the comments."
+            }
+          ]
+        },
+        {
+          "script": "03_risk_by_delta_v.R",
+          "injected_bug_line": 16,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 16,
+              "category": "unit_error",
+              "explanation": "The conversion factor 1.609 is for miles to kilometers, but delta-v in crash datasets is typically measured in mph. If the input is mph, the conversion is correct, but if the input is already in km/h, this creates an incorrect unit."
+            }
+          ]
+        },
+        {
+          "script": "04_weighted_driver_estimate.R",
+          "injected_bug_line": 18,
+          "found": true,
+          "explained": false,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 18,
+              "category": "wrong_weight_column",
+              "explanation": "The script uses vehicle_weight for occupant-level data. Occupant-level analysis requires the occupant-specific sampling weight (e.g., person_weight) to produce a valid national estimate."
+            }
+          ]
+        },
+        {
+          "script": "05_belt_rate_by_model_year.R",
+          "injected_bug_line": 17,
+          "found": true,
+          "explained": false,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 17,
+              "category": "mishandled_missing_values",
+              "explanation": "The mean function will return NA if there are any missing values in the belt_use column, which will invalidate the calculation of the belt use rate."
+            }
+          ]
+        },
+        {
+          "script": "06_risk_by_age_group.R",
+          "injected_bug_line": 10,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 10,
+              "category": "missing_values",
+              "explanation": "Replacing NA with 0 in the 'mais' column incorrectly treats missing injury severity data as 'no injury', which artificially deflates the calculated risk of MAIS3+ injuries."
+            }
+          ]
+        },
+        {
+          "script": "07_crash_type_summary.R",
+          "injected_bug_line": null,
+          "found": false,
+          "explained": false,
+          "false_alarms": 1,
+          "findings": [
+            {
+              "line": 11,
+              "category": "missing_values",
+              "explanation": "The mapping operation will return NA for any crash_type not explicitly defined in type_labels (e.g., values other than 1, 2, 3, or 4). These rows are then grouped together as NA, which distorts the weighted_share calculation."
+            }
+          ]
+        },
+        {
+          "script": "08_belt_age_logistic_model.R",
+          "injected_bug_line": null,
+          "found": false,
+          "explained": false,
+          "false_alarms": 0,
+          "findings": []
+        }
+      ]
+    ],
+    "with_codebook": [
+      [
+        {
+          "script": "01_mais3_by_vehicle_type.R",
+          "injected_bug_line": 10,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 10,
+              "category": "wrong_join_key",
+              "explanation": "The join uses only 'crash_id', but the codebook specifies that the key between occupants and vehicles is ('crash_id', 'vehicle_id'). This will cause incorrect duplication of vehicle data for occupants in crashes with multiple vehicles."
+            }
+          ]
+        },
+        {
+          "script": "02_serious_trend_2015_2022.R",
+          "injected_bug_line": 14,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 14,
+              "category": "wrong_filter",
+              "explanation": "The filter uses exclusive operators (> and <) instead of inclusive operators (>= and <=), which excludes the years 2015 and 2022 from the study period."
+            }
+          ]
+        },
+        {
+          "script": "03_risk_by_delta_v.R",
+          "injected_bug_line": 16,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 16,
+              "category": "unit_error",
+              "explanation": "The codebook states delta_v is already in km/h, but the script multiplies it by 1.609, incorrectly converting it as if it were in mph."
+            }
+          ]
+        },
+        {
+          "script": "04_weighted_driver_estimate.R",
+          "injected_bug_line": 18,
+          "found": true,
+          "explained": true,
+          "false_alarms": 1,
+          "findings": [
+            {
+              "line": 18,
+              "category": "wrong_weighting_variable",
+              "explanation": "The script uses 'vehicle_weight' (curb mass in kg) as the sampling weight instead of 'case_weight' from the crashes table. This leads to an incorrect national estimate."
+            },
+            {
+              "line": 11,
+              "category": "missing_join_data",
+              "explanation": "The script joins 'occupants' and 'vehicles' but fails to join with the 'crashes' table, which is required to access the 'case_weight' variable needed for national estimates."
+            }
+          ]
+        },
+        {
+          "script": "05_belt_rate_by_model_year.R",
+          "injected_bug_line": 17,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 17,
+              "category": "mishandled_missing_values",
+              "explanation": "The calculation of belt_rate includes occupants with belt_use = 9 (unknown), which violates the analysis convention to exclude unknown values before computing rates."
+            }
+          ]
+        },
+        {
+          "script": "06_risk_by_age_group.R",
+          "injected_bug_line": 10,
+          "found": true,
+          "explained": true,
+          "false_alarms": 0,
+          "findings": [
+            {
+              "line": 10,
+              "category": "mishandled_missing_values",
+              "explanation": "The script replaces NA values in 'mais' with 0, which incorrectly treats occupants with uncoded injuries as uninjured. According to the analysis conventions, these occupants must be excluded from the denominator."
+            }
+          ]
+        },
+        {
+          "script": "07_crash_type_summary.R",
+          "injected_bug_line": null,
+          "found": false,
+          "explained": false,
+          "false_alarms": 0,
+          "findings": []
+        },
+        {
+          "script": "08_belt_age_logistic_model.R",
+          "injected_bug_line": null,
+          "found": false,
+          "explained": false,
+          "false_alarms": 0,
+          "findings": []
+        }
+      ]
+    ]
+  }
+}
