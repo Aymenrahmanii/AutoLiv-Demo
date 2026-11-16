@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" width="1000" height="390" role="img" aria-labelledby="t d">
+  <title id="t">How Coding Buddy works</title>
+  <desc id="d">Eight R scripts are sent with numbered lines to Gemini, once with code only and once with the codebook added. Gemini returns JSON findings, which are scored against the ground truth in manifest.json as located, right cause or false alarm, and written to report.md, results.json and the demo UI.</desc>
+  <style>
+    text { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #111518; }
+    .t { font-size: 15px; font-weight: 700; }
+    .s { font-size: 12.5px; fill: #3c474f; }
+    .m { font-family: Consolas, "SF Mono", Menlo, monospace; font-size: 12px; fill: #3c474f; }
+    .box { fill: #ffffff; stroke: #c3ccd2; stroke-width: 1.2; }
+    .edge { fill: none; stroke: #5f6b74; stroke-width: 2; stroke-dasharray: 6 6; animation: march 0.9s linear infinite; }
+    .edge.cb { stroke: #00704a; }
+    .edge.gt { stroke: #111518; }
+    @keyframes march { to { stroke-dashoffset: -12; } }
+    /* A ring travels along the pipeline: each stage lights up in turn (one 7 s cycle). */
+    .ring { fill: none; stroke-width: 3; opacity: 0; animation: lit 7s ease-out infinite; }
+    .blue { stroke: #0a5aa8; } .green { stroke: #00704a; } .ink { stroke: #111518; }
+    @keyframes lit { 0% { opacity: 0; } 3% { opacity: 1; } 14% { opacity: 1; } 22% { opacity: 0; } 100% { opacity: 0; } }
+    .pop { opacity: 0; animation: pop 7s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes pop { 0% { opacity: 0; transform: scale(0.6); } 4% { opacity: 1; transform: scale(1.08); } 7% { transform: scale(1); } 55% { opacity: 1; } 62% { opacity: 0; } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .edge, .ring, .pop { animation: none; } .pop { opacity: 1; } }
+  </style>
+
+  <rect width="1000" height="390" rx="14" fill="#e9edf0"/>
+
+  <!-- edges (under the boxes, so packets disappear into each stage) -->
+  <path id="p-main" class="edge" d="M160 200 H870"/>
+  <path id="p-cb" class="edge cb" d="M160 72 H262 V160"/>
+  <path class="edge gt" d="M760 300 V262"/>
+
+  <!-- packets: blue = code only, green = with codebook -->
+  <circle r="7" fill="#0a5aa8">
+    <animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.62;1" calcMode="linear"><mpath href="#p-main"/></animateMotion>
+  </circle>
+  <circle r="7" fill="#00704a">
+    <animateMotion dur="7s" begin="3.5s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.18;1" calcMode="linear"><mpath href="#p-cb"/></animateMotion>
+    <animate attributeName="opacity" dur="7s" begin="3.5s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.18;0.19;1"/>
+  </circle>
+  <circle r="7" fill="#00704a" opacity="0">
+    <animateMotion dur="7s" begin="3.5s" repeatCount="indefinite" keyPoints="0.14;0.14;1;1" keyTimes="0;0.18;0.7;1" calcMode="linear"><mpath href="#p-main"/></animateMotion>
+    <animate attributeName="opacity" dur="7s" begin="3.5s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.18;0.19;0.7;0.71;1"/>
+  </circle>
+
+  <!-- edge label -->
+  <rect x="168" y="40" width="150" height="22" rx="3" fill="#00704a"/>
+  <text x="243" y="56" text-anchor="middle" style="fill:#fff;font-size:12px;font-weight:700">+ codebook run only</text>
+
+  <!-- codebook -->
+  <rect class="box" x="20" y="36" width="140" height="72" rx="6" style="stroke:#00704a;stroke-width:2"/>
+  <text class="t" x="34" y="64">Codebook</text>
+  <text class="s" x="34" y="84">variables, codes,</text>
+  <text class="s" x="34" y="100">conventions</text>
+
+  <!-- 1 scripts -->
+  <rect class="box" x="20" y="158" width="140" height="84" rx="6"/>
+  <rect class="ring blue" x="20" y="158" width="140" height="84" rx="6" style="animation-delay:0s"/>
+  <text class="t" x="34" y="186">8 R scripts</text>
+  <text class="s" x="34" y="206">6 with one injected</text>
+  <text class="s" x="34" y="222">error, 2 clean</text>
+
+  <!-- 2 prompt -->
+  <rect class="box" x="200" y="160" width="124" height="80" rx="6"/>
+  <rect class="ring blue" x="200" y="160" width="124" height="80" rx="6" style="animation-delay:0.62s"/>
+  <text class="t" x="214" y="190">Prompt</text>
+  <text class="m" x="214" y="210"> 1 | library(..</text>
+  <text class="m" x="214" y="226">17 | mean(..</text>
+
+  <!-- 3 gemini -->
+  <rect x="364" y="160" width="128" height="80" rx="6" fill="#1c2328"/>
+  <rect class="ring blue" x="361" y="157" width="134" height="86" rx="8" style="animation-delay:1.64s"/>
+  <text class="t" x="378" y="190" style="fill:#f2f5f7">Gemini</text>
+  <text class="s" x="378" y="210" style="fill:#b9c4cb">JSON schema</text>
+  <text class="s" x="378" y="226" style="fill:#b9c4cb">temperature 0</text>
+
+  <!-- 4 findings -->
+  <rect class="box" x="532" y="160" width="146" height="80" rx="6" style="fill:#fff6c7;stroke:#ecd777"/>
+  <rect class="ring blue" x="532" y="160" width="146" height="80" rx="6" style="animation-delay:2.7s"/>
+  <g class="pop" style="animation-delay:2.8s">
+    <path d="M555 172 L567 193 H543 Z" fill="#ffd100" stroke="#d2141e" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M555 179 v6" stroke="#111518" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="555" cy="189" r="1.2" fill="#111518"/>
+  </g>
+  <text class="t" x="576" y="190">Findings</text>
+  <text class="s" x="546" y="212">line · category ·</text>
+  <text class="s" x="546" y="228">explanation</text>
+
+  <!-- 5 score -->
+  <path d="M760 138 L822 200 L760 262 L698 200 Z" fill="#ffffff" stroke="#c3ccd2" stroke-width="1.2"/>
+  <path class="ring blue" d="M760 134 L826 200 L760 266 L694 200 Z" style="animation-delay:3.6s"/>
+  <text class="t" x="760" y="196" text-anchor="middle">Score vs</text>
+  <text class="t" x="760" y="214" text-anchor="middle">ground truth</text>
+
+  <!-- manifest -->
+  <rect class="box" x="682" y="300" width="156" height="70" rx="6" style="stroke:#111518;stroke-width:1.6"/>
+  <text class="t" x="696" y="326" style="font-family:Consolas,'SF Mono',Menlo,monospace;font-size:14px">manifest.json</text>
+  <text class="s" x="696" y="346">injected line +</text>
+  <text class="s" x="696" y="362">diagnosis keywords</text>
+
+  <!-- 6 output -->
+  <rect class="box" x="862" y="160" width="118" height="80" rx="6"/>
+  <rect class="ring blue" x="862" y="160" width="118" height="80" rx="6" style="animation-delay:4.3s"/>
+  <text class="m" x="876" y="188" style="fill:#111518;font-weight:700">report.md</text>
+  <text class="m" x="876" y="206" style="fill:#111518;font-weight:700">results.json</text>
+  <text class="s" x="876" y="226">demo UI</text>
+
+  <!-- verdict plates -->
+  <g class="pop" style="animation-delay:3.75s">
+    <rect x="862" y="262" width="118" height="26" rx="3" fill="#ffffff" stroke="#111518" stroke-width="2"/>
+    <text x="921" y="280" text-anchor="middle" style="font-size:12.5px;font-weight:700">Located</text>
+  </g>
+  <g class="pop" style="animation-delay:3.95s">
+    <rect x="862" y="296" width="118" height="26" rx="3" fill="#00704a"/>
+    <text x="921" y="314" text-anchor="middle" style="font-size:12.5px;font-weight:700;fill:#fff">Right cause</text>
+  </g>
+  <g class="pop" style="animation-delay:4.15s">
+    <rect x="862" y="330" width="118" height="26" rx="3" fill="#ffffff" stroke="#d2141e" stroke-width="2"/>
+    <text x="921" y="348" text-anchor="middle" style="font-size:12.5px;font-weight:700;fill:#d2141e">False alarm</text>
+  </g>
+
+  <!-- legend -->
+  <circle cx="34" cy="352" r="6" fill="#0a5aa8"/>
+  <text class="s" x="46" y="357">code only</text>
+  <circle cx="128" cy="352" r="6" fill="#00704a"/>
+  <text class="s" x="140" y="357">code + codebook</text>
+  <text class="s" x="260" y="357">Every script is reviewed in both conditions.</text>
+</svg>

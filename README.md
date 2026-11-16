@@ -37,17 +37,7 @@ real variable, code or rule in all six cases. The full breakdown is in
 
 ## How it works
 
-```mermaid
-flowchart LR
-    A["8 R scripts<br/>6 with one injected error<br/>2 clean controls"] --> B["Prompt<br/>numbered lines"]
-    C["Codebook<br/>(variables, codes, conventions)"] -.->|"+ codebook run only"| B
-    B --> D["Gemini<br/>JSON response schema"]
-    D --> E["Findings<br/>line · category · explanation"]
-    E --> F{"Score vs<br/>ground truth"}
-    G["manifest.json<br/>injected line + diagnosis keywords"] --> F
-    F --> H["report.md<br/>results.json"]
-    H --> I["Demo UI"]
-```
+![Animated pipeline: R scripts and the optional codebook go into the prompt, Gemini returns JSON findings, which are scored against manifest.json as located, right cause or false alarm](docs/how-it-works.svg)
 
 1. **Benchmark.** [`benchmark/scripts/`](benchmark/scripts) holds 8 short analyses on a synthetic
    in-depth crash database (crashes, vehicles, occupants), described in
