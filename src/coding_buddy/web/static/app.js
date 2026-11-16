@@ -199,7 +199,14 @@ function setupBenchmark() {
   }
   $("#model-plate").textContent = `benchmark · ${res.model}`;
   $("#model-plate").title = "Model used for the benchmark results. Live review shows its own model.";
-  state.script = state.data.cases[0].script;
+  // Deep link: ?script=05 opens that script, ?mode=with_codebook picks the condition.
+  const params = new URLSearchParams(location.search);
+  const wanted = params.get("script");
+  state.script = (wanted && state.data.cases.find((c) => c.script.startsWith(wanted))?.script) || state.data.cases[0].script;
+  if (["compare", "without_codebook", "with_codebook"].includes(params.get("mode"))) {
+    state.mode = params.get("mode");
+    $("#mode-group").querySelectorAll("button").forEach((b) => b.setAttribute("aria-checked", String(b.dataset.mode === state.mode)));
+  }
   $("#run-select").innerHTML = Array.from({ length: res.repeats }, (_, i) => `<option value="${i}">Run ${i + 1} of ${res.repeats}</option>`).join("");
   $("#run-select").closest(".select-wrap").hidden = res.repeats < 2;
   renderGantry();
